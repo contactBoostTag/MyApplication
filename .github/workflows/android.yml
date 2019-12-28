@@ -35,11 +35,6 @@ jobs:
       run: ./gradlew assembleDebug lint testDebugUnitTest -p library
     - name: Testing Coverage
       run: ./gradlew createDebugCoverageReport
-    - name: Upload APK
-      uses: actions/upload-artifact@v1
-      with:
-        name: app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
     - name: Upload Testing
       uses: actions/upload-artifact@v1
       with:
@@ -50,6 +45,11 @@ jobs:
       with:
         name: library-aar
         path: library/build/outputs/aar/library-debug.aar
+    - name: Upload APK
+      uses: actions/upload-artifact@v1
+      with:
+        name: app-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
@@ -64,12 +64,9 @@ jobs:
            -Dsonar.sources=app/src/main/java
            -Dsonar.tests=library/src/test/java
            -Dsonar.coverage_path=library/build/reports/coverage/debug/report.xml
-           -Dsonar.jacoco.reportPath=library/build/jacoco/testDebugUnitTest.exec
-           -Dsonar.jacoco.itReportPath=library/build/outputs/code-coverage/connected/coverage.ec
+           -Dsonar.coverage.jacoco.xmlReportPaths=library/build/reports/coverage/debug/report.xml
            -Dsonar.android.lint.report=library/build/reports/lint-results.xml
            -Dsonar.android.junit.reportsPath=library/build/reports/coverage/debug
-           -Dsonar.java.coveragePlugin=cobertura
-           -Dsonar.cobertura.reportPath=library/build/reports/coverage/debug/report.xml
 
 #     - name: show
 #       run: cat /opt/hostedtoolcache/sonar-scanner/4.2.0.1873/x64/sonar-scanner-4.2.0.1873-linux/conf/sonar-scanner.properties
