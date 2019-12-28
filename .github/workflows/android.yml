@@ -27,7 +27,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build App & Jacoco with Gradle
+    - name: Build App with Gradle
+      run: ./gradlew assembleDebug
+    - name: Jacoco Task
       run: ./gradlew jacocoTestReport
     - name: Testing library
       run: ./gradlew assembleDebug lint testDebugUnitTest -p library
@@ -61,6 +63,7 @@ jobs:
            -Dsonar.projectKey=contactBoostTag_MyApplication
            -Dsonar.sources=app/src/main/java
            -Dsonar.tests=library/src/test/java
+           -Dsonar.coverage_path=library/build/reports/coverage/debug/report.xml
            -Dsonar.jacoco.reportPath=library/build/jacoco/testDebugUnitTest.exec
            -Dsonar.jacoco.itReportPath=library/build/outputs/code-coverage/connected/coverage.ec
            -Dsonar.android.lint.report=library/build/reports/lint-results.xml
