@@ -8,10 +8,11 @@ on:
      - '!master' 
      - '!release*'
   push:
-    branches: 
-     - '*' 
-     - '!master' 
-     - '!release*'
+    branches:
+      - 'master' 
+#      - '*' 
+#      - '!master' 
+#      - '!release*'
 
 jobs:
   build:
@@ -38,3 +39,4 @@ jobs:
       with:
         name: library-test
         path: library/build/reports/tests/testDebugUnitTest
+
