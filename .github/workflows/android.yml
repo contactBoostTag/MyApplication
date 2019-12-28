@@ -27,6 +27,25 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+    - name: Build App with Gradle
+      run: ./gradlew assembleDebug
+    - name: Testing
+      run: ./gradlew assembleDebug lint testDebugUnitTest -p library
+    - name: Upload APK
+      uses: actions/upload-artifact@v1
+      with:
+        name: app-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
+    - name: Upload Testing
+      uses: actions/upload-artifact@v1
+      with:
+        name: library-test
+        path: library/build/reports/tests/testDebugUnitTest
+    - name: Upload library artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: library-aar
+        path: library/build/outputs/aar/library-debug.aar        
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
@@ -38,8 +57,9 @@ jobs:
            -Dsonar.organization=boosttag
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=contactBoostTag_MyApplication
-           -Dsonar.sources=library/src/main/java
-#            -Dsonar.tests=library/src/test/java 
+           -Dsonar.sources=app/src/main/java
+           -Dsonar.tests=library/src/test/java 
+           -Dsonar.junit.reportsPath=library/build/test-results/debug
            
 #     - name: show
 #       run: cat /opt/hostedtoolcache/sonar-scanner/4.2.0.1873/x64/sonar-scanner-4.2.0.1873-linux/conf/sonar-scanner.properties
