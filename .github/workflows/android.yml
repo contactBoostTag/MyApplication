@@ -1,4 +1,6 @@
 # .github/workflows/android.yml
+# https://github.com/marketplace/actions/sonar-scanner
+# https://sonarcloud.io/
 
 name: Android CI
 
