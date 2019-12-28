@@ -17,5 +17,5 @@ jobs:
       run: ./gradlew build
     - name: Testing
       run: ./gradlew assembleDebug lint testDebugUnitTest -p library
-    - name: GitHub Releases
-      uses: fnkr/github-action-ghr@v1.2
+    - name: Android Test Report Action
+      uses: asadmansr/android-test-report-action@master
