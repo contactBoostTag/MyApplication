@@ -39,6 +39,7 @@ jobs:
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=contactBoostTag_MyApplication
            -Dsonar.sources=app/src/main/java
+           -Dsonar.tests=library/src/test/java
 #            -Dsonar.tests=library/src/test/java
            
 #     - name: show
