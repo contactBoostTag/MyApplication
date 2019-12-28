@@ -63,6 +63,10 @@ jobs:
            -Dsonar.tests=library/src/test/java
            -Dsonar.junit.reportsPath=library/build/test-results/debug
            -Dsonar.jacoco.reportPath=library/build/jacoco/testDebugUnitTest.exec
-           
+           -Dsonar.junit.reportsPath=library/build/test-results/debug
+           -Dsonar.jacoco.itReportPath=library/build/outputs/code-coverage/connected/coverage.ec
+           -Dsonar.java.test.binaries=library/build/intermediates/classes/debug
+           -Dsonar.android.lint.report=library/build/outputs/lint-results.xml
+
 #     - name: show
 #       run: cat /opt/hostedtoolcache/sonar-scanner/4.2.0.1873/x64/sonar-scanner-4.2.0.1873-linux/conf/sonar-scanner.properties

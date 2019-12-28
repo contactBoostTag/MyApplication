@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-
 apply plugin: 'com.vanniktech.android.junit.jacoco'
+
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
@@ -32,7 +32,7 @@ android {
 }
 task jacocoTestReport(type:JacocoReport, dependsOn: ["assembleDebug", "lint", "testDebugUnitTest"] ){
     group = "Reporting"
-    description = "Reporte Generado"
+    description = "Go Over Reporting"
 
     classDirectories = fileTree(
             dir: 'build/intermediates/classes/debug/com/boosttag/lib' ,
