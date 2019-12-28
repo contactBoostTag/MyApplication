@@ -45,7 +45,9 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: library-aar
-        path: library/build/outputs/aar/library-debug.aar        
+        path: library/build/outputs/aar/library-debug.aar
+    - name: Jacoco
+      run: ./gradlew jacocoTestReport
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
@@ -57,9 +59,10 @@ jobs:
            -Dsonar.organization=boosttag
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=contactBoostTag_MyApplication
-           -Dsonar.sources=library/src/main/java
-           -Dsonar.tests=library/src/test/java 
+           -Dsonar.sources=app/../library/src/main/java
+           -Dsonar.tests=library/src/test/java
            -Dsonar.junit.reportsPath=library/build/test-results/debug
+           -Dsonar.jacoco.reportPath=library/build/jacoco/testDebugUnitTest.exec
            
 #     - name: show
 #       run: cat /opt/hostedtoolcache/sonar-scanner/4.2.0.1873/x64/sonar-scanner-4.2.0.1873-linux/conf/sonar-scanner.properties
