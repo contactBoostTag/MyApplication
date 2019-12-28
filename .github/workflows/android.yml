@@ -20,10 +20,10 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v1
       with:
-        name: app
+        name: app-debug
         path: app/build/outputs/apk/debug/app-debug.apk
     - name: Upload Testing
       uses: actions/upload-artifact@v1
       with:
         name: library-test
-        path: library/build/reports
+        path: library/build/test-results
