@@ -39,4 +39,8 @@ jobs:
       with:
         name: library-test
         path: library/build/reports/tests/testDebugUnitTest
-
+    - name: Upload library artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: library-aar
+        path: library/build/outputs/aar/library-debug.aar
