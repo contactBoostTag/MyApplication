@@ -34,7 +34,7 @@ jobs:
     - name: Jacoco Task
       run: ./gradlew jacocoTestReport
     - name: Testing library
-      run: ./gradlew assembleDebug lint testDebugUnitTest -p library
+      run: ./gradlew lint testDebugUnitTest -p library
     - name: Testing Coverage
       run: ./gradlew createDebugCoverageReport
     - name: Upload Testing
