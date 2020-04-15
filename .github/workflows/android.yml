@@ -60,8 +60,8 @@ jobs:
         prerelease: false
         title: "Release"
         files: |
-            *.aar
-            *.apk
+            library/build/outputs/aar/library-debug.aar
+            app/build/outputs/apk/debug/app-debug.apk
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
@@ -73,7 +73,7 @@ jobs:
            -Dsonar.organization=boosttag
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=contactBoostTag_MyApplication
-           -Dsonar.sources=library/src/main/java
+           -Dsonar.sources=app/src/main/java
            -Dsonar.tests=library/src/test/java
            -Dsonar.coverage_path=library/build/reports/coverage/debug/report.xml
            -Dsonar.coverage.jacoco.xmlReportPaths=library/build/reports/coverage/debug/report.xml
