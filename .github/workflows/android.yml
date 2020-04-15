@@ -29,8 +29,6 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build App with Gradle
-      run: ./gradlew assembleDebug
     - name: Jacoco Task
       run: ./gradlew jacocoTestReport
     - name: Testing library
