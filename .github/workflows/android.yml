@@ -60,8 +60,8 @@ jobs:
         prerelease: false
         title: "Release"
         files: |
-          *.aar
-          *.apk
+            *.aar
+            *.apk
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
     - name: Run sonarqube
