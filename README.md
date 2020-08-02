@@ -1,4 +1,4 @@
-# Please update readme
+# Please Update readme
 ![Android CI](https://github.com/contactBoostTag/MyApplication/workflows/Android%20CI/badge.svg)
 # MyApplication
 ## by Boosttag E.I.R.L.
