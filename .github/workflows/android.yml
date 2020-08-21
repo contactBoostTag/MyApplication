@@ -64,6 +64,10 @@ jobs:
             app/build/outputs/apk/debug/app-debug.apk
     - name: Setup sonarqube
       uses: warchant/setup-sonar-scanner@v1
+    - name: Testing Coverage
+      run: rm -rf app/
+    - name: Testing Coverage
+      run: mv library app
     - name: Run sonarqube
       env:
         # to get access to secrets.SONAR_TOKEN, provide GITHUB_TOKEN
@@ -73,12 +77,12 @@ jobs:
            -Dsonar.organization=boosttag
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=contactBoostTag_MyApplication
-           -Dsonar.sources=library/src/main/java
-           -Dsonar.tests=library/src/test/java
-           -Dsonar.coverage_path=library/build/reports/coverage/debug/report.xml
-           -Dsonar.coverage.jacoco.xmlReportPaths=library/build/reports/coverage/debug/report.xml
-           -Dsonar.android.lint.report=library/build/reports/lint-results.xml
-           -Dsonar.android.junit.reportsPath=library/build/reports/coverage/debug
+           -Dsonar.sources=app/src/main/java
+           -Dsonar.tests=app/src/test/java
+           -Dsonar.coverage_path=app/build/reports/coverage/debug/report.xml
+           -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/coverage/debug/report.xml
+           -Dsonar.android.lint.report=app/build/reports/lint-results.xml
+           -Dsonar.android.junit.reportsPath=app/build/reports/coverage/debug
 
 #     - name: show
 #       run: cat /opt/hostedtoolcache/sonar-scanner/4.2.0.1873/x64/sonar-scanner-4.2.0.1873-linux/conf/sonar-scanner.properties
