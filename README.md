@@ -1,5 +1,6 @@
 # Please Update readme
 ![Android CI](https://github.com/contactBoostTag/MyApplication/workflows/Android%20CI/badge.svg)
+![URL Health Check](https://github.com/contactBoostTag/MyApplication/workflows/URL%20Health%20Check/badge.svg)
 # MyApplication
 ## by Boosttag E.I.R.L.
 
