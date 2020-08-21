@@ -73,7 +73,7 @@ jobs:
            -Dsonar.organization=boosttag
            -Dsonar.host.url=https://sonarcloud.io/
            -Dsonar.projectKey=contactBoostTag_MyApplication
-           -Dsonar.sources=app/src/main/java
+           -Dsonar.sources=library/src/main/java
            -Dsonar.tests=library/src/test/java
            -Dsonar.coverage_path=library/build/reports/coverage/debug/report.xml
            -Dsonar.coverage.jacoco.xmlReportPaths=library/build/reports/coverage/debug/report.xml
