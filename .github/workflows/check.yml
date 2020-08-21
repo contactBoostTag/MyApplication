@@ -1,0 +1,16 @@
+name: Shitaraba Health Check
+
+on:
+  push:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: URL Health Check
+      uses: Jtalk/url-health-check-action@v1.3
+      with:
+        url: https://contactboosttag.github.io/MyApplication/
+        max-attempts: 3
+        retry-delay: 5s
