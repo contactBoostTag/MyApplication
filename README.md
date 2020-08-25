@@ -7,6 +7,6 @@
 A short description of the project.
 
 <details>
-<summary> <b> License 2020 </b>  </summary>
-MIT. See the LICENSE file for the copyright notice.
+  <summary> <b> License 2020 </b> </summary>
+  * MIT. See the LICENSE file for the copyright notice.
 </details>
