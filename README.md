@@ -6,6 +6,7 @@
 
 A short description of the project.
 
-### License 2020
-
+<details>
+<summary> <b> License 2020 </b>  </summary>
 MIT. See the LICENSE file for the copyright notice.
+</details>
